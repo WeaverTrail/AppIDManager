@@ -5,10 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  versioning:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Git Automatic Semantic Versioning
-        uses: bitshifted/git-auto-semver@v1.1.0          
+        uses: bitshifted/git-auto-semver@v1.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}          
 
