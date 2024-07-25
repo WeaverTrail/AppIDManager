@@ -1,0 +1,15 @@
+name: Semantic Versioning 
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  versioning:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: calculate version
+        id: calculate-version
+        uses: bitshifted/git-auto-semver@v1       
+
