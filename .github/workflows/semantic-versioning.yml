@@ -1,12 +1,14 @@
+name: Semantic Versioning 
+
 on:
   push:
     branches: [main]
+
 jobs:
-  versioning:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: calculate version
-        id: calculate-version
-        uses: bitshifted/git-auto-semver@v1
-      - name: Use version
-        run: echo "Calculated version: ${{ steps.calculate-version.outputs.version-string }}"
+      - name: Git Automatic Semantic Versioning
+        uses: bitshifted/git-auto-semver@v1.1.0          
+
